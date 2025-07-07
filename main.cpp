@@ -13,7 +13,7 @@
 
 
 std::vector<std::pair<char const *, matrix (*)(matrix const &, matrix const &)> > const multiply_functions = {
-    // {"wrong_multiply", wrong_multiply},
+    {"wrong_multiply", wrong_multiply},
     {"basic_multiply", basic_multiply},
     {"fast_multiply", fast_multiply}
 };
@@ -23,10 +23,8 @@ int main() {
     mlockall(MCL_CURRENT | MCL_FUTURE);
     srand(time(nullptr));
 
-    size_t const matrix_size = 1024;
-
-    size_t const big_r = matrix_size;
-    size_t const big_c = matrix_size;
+    size_t const big_r = 2048;
+    size_t const big_c = 2048;
     matrix big_test_matrix(big_r, big_c);
     for (size_t i = 0; i < big_r; ++i) {
         for (size_t j = 0; j < big_c; ++j) {

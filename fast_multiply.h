@@ -8,8 +8,8 @@ inline matrix fast_multiply(matrix const &a, matrix const &b) {
     matrix result(a_rows, b_cols, true);
 
     for (size_t i = 0; i < a_rows; ++i) {
-        for (size_t j = 0; j < b_cols; ++j) {
-            for (size_t k = 0; k < b_rows; ++k) {
+        for (size_t k = 0; k < b_rows; ++k) {
+            for (size_t j = 0; j < b_cols; ++j) {
                 result[i][j] += a[i][k] * b[k][j];
             }
         }
